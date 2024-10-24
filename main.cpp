@@ -1,17 +1,33 @@
-#include<iostream>
-#include<foco.hpp>
+#include <iostream>
+#include <SerieNavidad.hpp>
+#include <Lienzo.hpp>
+#include <Vector.hpp>
+#include <unistd.h>
 
 int main(int argc, char const *argv[])
 {
-    Foco foco1;
-    Foco foco2;
+    Vector p(0,5);
+    Vector t(100,100);
 
-    std::cout<<"Encendiendo foco"<<std::endl;
-    std::cout<<"Apagando foco"<<std::endl;
+    Lienzo lienzo(p,t);
 
-    foco1.Encender();
-    foco1.Apagar();   
-    foco1.encendido = false;
+    SerieNavidad serie1(30);
+    SerieNavidad serie2(30);
 
+    bool estado = true;
+    int incremento = 0;
+    while (true)
+    {
+        serie1.Alternar(estado);
+        lienzo.Dibujar(serie1);
+        estado = estado ? false : true;
+
+        serie2.Apagar();
+        serie2.Encender();
+        lienzo.Dibujar(serie2);
+
+        sleep(1);
+        lienzo.Limpiar();
+    }
     return 0;
 }

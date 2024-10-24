@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+
+using namespace std;
+
 class Foco
 {
 private:
@@ -6,10 +10,23 @@ public:
     bool encendido;
     Foco() {}
     ~Foco() {}
-    void Encender (){
+    void Encender()
+    {
         this->encendido = true;
     }
-    void Apagar (){
+    void Apagar()
+    {
         this->encendido = false;
+    }
+    void Imprimir()
+    {
+        if (this->encendido)
+        {
+            cout << "O";
+        }
+        else
+        {
+            cout << ".";
+        }
     }
 };
