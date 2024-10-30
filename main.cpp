@@ -18,16 +18,18 @@ int main(int argc, char const *argv[])
     int incremento = 0;
     while (true)
     {
+        //Celula explotada
         serie1.Alternar(estado);
         lienzo.Dibujar(serie1);
         estado = estado ? false : true;
-
-        serie2.Apagar();
-        serie2.Encender();
-        lienzo.Dibujar(serie2);
-
         sleep(1);
         lienzo.Limpiar();
+
+        //Incremento
+        serie2.Apagar();
+        serie2.Encender(incremento);
+        incremento++;
+        lienzo.Dibujar(serie2);
     }
     return 0;
 }

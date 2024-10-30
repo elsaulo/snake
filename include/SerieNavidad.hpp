@@ -20,13 +20,28 @@ public:
 
     ~SerieNavidad() {}
 
-    void Encender()
-    {
-        for (auto &&foco : focos)
+        void Encender()
         {
+        for (auto &&foco : focos)
+            {
             foco.Encender();
-        }
-    }
+            }  
+
+        }  
+
+    void Encender(int noFocos)
+        {
+        int decremento = noFocos;    
+        for (auto &&foco : focos)
+            {
+                if (decremento > 0)
+                {
+                foco.Encender();
+                decremento--;
+                }
+            }  
+
+        }  
 
     void Apagar()
     {
