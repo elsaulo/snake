@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
         while(frame1 == 20) 
         {
               
-        frame1=frame1-20;
+        frame1=frame1-25;
         
     }
     }
